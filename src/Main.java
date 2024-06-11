@@ -7,6 +7,12 @@ public class Main {
         Calculator calculator = new Calculator();
         Scanner scanner = new Scanner(System.in);
 
+        try {
+            System.out.println(calculator.division(Integer.parseInt(scanner.nextLine()), Integer.parseInt(scanner.nextLine())));
+        } catch (ArithmeticException ex) {
+            ex.getStackTrace();
+        }
+
         System.out.println("""
                 Welcome! Choose an action:
                     1 - for addition

@@ -14,4 +14,20 @@ public class Calculator {
         }
         return a;
     }
+
+    public int pow(int a, int b) {
+        if (b > 1) {
+            int buffer = a;
+            while (b > 1) {
+                a *= buffer;
+                b--;
+            }
+            return a;
+        } else if (b == 1) {
+            return a;
+        } else if (b == 0) {
+            return 1;
+        }
+        return -1;
+    }
 }

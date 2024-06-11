@@ -30,4 +30,20 @@ public class Calculator {
         }
         return -1;
     }
+
+    public int factorial(int n) {
+        if (n == 0) {
+            return n;
+        }
+
+        int result = 1;
+        int counter = 1;
+        if (n > 1) {
+            while (counter <= n) {
+                result *= counter;
+                counter++;
+            }
+        }
+        return result;
+    }
 }

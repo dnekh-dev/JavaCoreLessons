@@ -49,7 +49,7 @@ public class Calculator {
 
     public int division(int a, int b) {
         if (b == 0) {
-            throw new ArithmeticException("Division by zero!");
+            throw new ArithmeticException("Division be zero!");
         }
         return a / b;
     }

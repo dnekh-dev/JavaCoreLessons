@@ -4,12 +4,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Calculator calculator = new Calculator();
-        Scanner scanner = new Scanner(System.in);
+        var calculator = new Calculator();
+        var scanner = new Scanner(System.in);
 
-        int userChoice = 0;
+        var userChoice = 0;
 
-        while (userChoice != 7) {
+        while (userChoice != 8) {
 
             printMenu();
             userChoice = scanner.nextInt();
@@ -17,8 +17,8 @@ public class Main {
             switch(userChoice) {
                 case 1, 2, 3, 4:
                     System.out.println("Enter two integers:");
-                    int firstNum = scanner.nextInt();
-                    int secondNum = scanner.nextInt();
+                    var firstNum = scanner.nextInt();
+                    var secondNum = scanner.nextInt();
 
                     if (userChoice == 1) {
                         System.out.println("Result of addition is " + calculator.sum(firstNum, secondNum));
@@ -34,17 +34,19 @@ public class Main {
                         System.out.println("Result of raising first number to a power of second number is " + calculator.pow(firstNum, secondNum));
                     }
                     break;
-                case 5, 6:
+                case 5, 6, 7:
                     System.out.println("Enter a number:");
-                    int number = scanner.nextInt();
+                    var number = scanner.nextInt();
 
                     if (userChoice == 5) {
                         System.out.println(number + "! is " + calculator.factorial(number));
-                    } else {
+                    } else if (userChoice == 6) {
                         System.out.println("Absolute value of your number is " + calculator.abs(number));
+                    } else {
+                        System.out.println("The number is " + (calculator.isPrime(number) ? "Prime" : "Not Prime"));
                     }
                     break;
-                case 7:
+                case 8:
                     break;
                 default:
                     System.out.println("There is no such option!");
@@ -69,6 +71,7 @@ public class Main {
                     4 - for raising a number to a power
                     5 - for calculate factorial
                     6 - obtain absolute value of number
-                    7 - for exit""");
+                    7 - for checking if number is prime
+                    8 - for exit""");
     }
 }

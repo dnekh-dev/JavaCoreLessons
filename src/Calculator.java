@@ -8,6 +8,13 @@ public class Calculator {
         return a * b;
     }
 
+    public int division(int a, int b) {
+        if (b == 0) {
+            throw new ArithmeticException("Division be zero!");
+        }
+        return a / b;
+    }
+
     public int abs(int a) {
         if (a < 0) {
             return a * -1;
@@ -33,24 +40,34 @@ public class Calculator {
 
     public int factorial(int n) {
         if (n == 0) {
-            return n;
+            return 1;
         }
 
         int result = 1;
-        int counter = 1;
-        if (n > 1) {
-            while (counter <= n) {
-                result *= counter;
-                counter++;
-            }
+        for (var i = 1; i <= n; i++) {
+            result *= i;
         }
+
         return result;
     }
 
-    public int division(int a, int b) {
-        if (b == 0) {
-            throw new ArithmeticException("Division be zero!");
+    //method for checking if number is prime
+    public boolean isPrime(int number) {
+
+        // Step 1: If number is less than 2, it is not prime
+        if (number < 2) {
+            return false;
         }
-        return a / b;
+
+        // Step 2: Check divisibility from 2 to the square root of the number
+        for (var i = 2; i <= Math.sqrt(number); i++) {
+            // If the number is divisible by any number in this range, it is not prime
+            if (number % i == 0) {
+                return false;
+            }
+        }
+
+        // If no divisors were found, the number is prime
+        return true;
     }
 }
